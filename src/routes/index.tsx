@@ -166,7 +166,14 @@ function Index() {
 
       {/* Header */}
       <header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-6 pt-6">
-        <h1 className="font-display text-xl italic tracking-wide text-foreground/90">Motion <span className="text-foreground/50">and</span> Still</h1>
+        <a href="/" className="group flex items-center transition-opacity hover:opacity-80">
+          <img
+            src="./logo.png"
+            alt="Motion and Still"
+            className="h-10 w-10 object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)] md:h-12 md:w-12"
+          />
+          <span className="sr-only">Motion and Still</span>
+        </a>
         <Button variant="quiet" aria-label="Open menu" onClick={() => setMenu(true)} className="glossy grid h-11 w-11 place-items-center rounded-full">
           <Menu className="h-4 w-4" />
         </Button>
@@ -251,7 +258,10 @@ function Index() {
               </div>
             )}
           </Section>}
-          <p className="mt-8 text-center text-[10px] tracking-[0.3em] text-foreground/40">{visual === "nasa" ? "IMAGES COURTESY OF NASA" : "MOTION AND STILL"}</p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-2">
+            <img src="./logo.png" alt="Motion and Still" className="h-8 w-8 object-contain opacity-40" />
+            <p className="text-center text-[10px] tracking-[0.3em] text-foreground/40">{visual === "nasa" ? "IMAGES COURTESY OF NASA" : "MOTION AND STILL"}</p>
+          </div>
         </aside>
       </div>
     </main>
